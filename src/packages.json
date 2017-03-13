@@ -1,6 +1,6 @@
 {
   "name": "nej-commonjs",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "description": "NEJ 是网易开源的一体化前端框架，而 NEJ-CommonJS 是 NEJ 的 CommonJS 版本",
   "main": "gulpfile.js",
   "scripts": {
