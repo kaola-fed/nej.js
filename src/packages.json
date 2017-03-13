@@ -1,0 +1,22 @@
+{
+  "name": "nej-commonjs",
+  "version": "1.0.0",
+  "description": "NEJ 是网易开源的一体化构建工具，而 NEJ-CommonJS 是面向社区模块标准的 CommonJS 规范的 Javascript Framework",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaola-fed/NEJ-CommonJS.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaola-fed/NEJ-CommonJS/issues"
+  },
+  "homepage": "https://github.com/kaola-fed/NEJ-CommonJS#readme",
+  "devDependencies": {
+    "nejc": "^1.2.0"
+  }
+}
