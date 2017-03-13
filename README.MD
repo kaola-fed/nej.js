@@ -37,7 +37,7 @@ module.exports = {
 _[查看 example](./example)_
 
 ## LICENSE
-[![license][license-image]][license-url]
+MIT
 
 [license-url]: https://github.com/kaola-fed/NEJ-CommonJS/blob/master/LICENSE
 [license-image]: https://img.shields.io/github/license/kaola-fed/NEJ-CommonJS.svg
