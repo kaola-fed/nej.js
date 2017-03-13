@@ -8,5 +8,6 @@
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "nejc": "^1.2.0"
-  }
+  },
+  "license": "MIT"
 }
