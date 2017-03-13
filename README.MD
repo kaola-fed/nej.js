@@ -36,6 +36,8 @@ module.exports = {
 ```
 _[查看 example](./example)_
 
-## 如何使用
+## LICENSE
+[![license][license-image]][license-url]
 
-配置完成之后，使用 webpack 进行引入，具体文档见 [API手册](http://nej.netease.com/help/index.html)，享受 NEJ 带来的乐趣吧 :-)
+[license-url]: https://github.com/kaola-fed/NEJ-CommonJS/blob/master/LICENSE
+[license-image]: https://img.shields.io/github/license/kaola-fed/NEJ-CommonJS.svg
