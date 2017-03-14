@@ -16,20 +16,21 @@ module.exports = {
     },
     module: {
         loaders: [
+            // {
+            //     test: /.js$/,
+            //     loader: 'babel-loader',
+            //     query: {
+            //         "presets": [
+            //             [
+            //                 require.resolve("babel-preset-es2015")
+            //             ]
+            //         ],
+            //         "plugins": [
+            //             require.resolve("babel-plugin-transform-remove-strict-mode")
+            //         ]
+            //     }
+            // },
             {
-                test: /.js$/,
-                loader: 'babel-loader',
-                query: {
-                    "presets": [
-                        [
-                            require.resolve("babel-preset-es2015")
-                        ]
-                    ],
-                    "plugins": [
-                        require.resolve("babel-plugin-transform-remove-strict-mode")
-                    ]
-                }
-            }, {
                 test: /nej\-commonjs/,
                 loader: "imports-loader?this=>window"
             }
@@ -43,7 +44,7 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            // 'nej-commonjs': path.resolve(webapp, '../dist')
+            'nej-commonjs': path.resolve(webapp, '../nej-commonjs')
         }
     },
     devtool: 'cheap-source-map'

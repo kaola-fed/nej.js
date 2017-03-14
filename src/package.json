@@ -1,10 +1,10 @@
 {
   "name": "nej-commonjs",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "NEJ 是网易开源的一体化前端框架，而 NEJ-CommonJS 是 NEJ 的 CommonJS 版本",
-  "main": "gulpfile.js",
+  "main": "base/global.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
