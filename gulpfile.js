@@ -1,10 +1,11 @@
 const gulp = require('gulp');
 const clean = require('gulp-clean');
 const insert = require('gulp-insert');
+const rename = require('gulp-rename');
 const nejc = require('nejc');
 const path = require('path');
 const fs = require('fs');
-const dist = 'nej-commonjs';
+const dist =  process.env.PLATFORM ? 'nej-commonjs-platform': 'nej-commonjs';
 const config = {
     'src': 'src/**',
     'dist': dist,
@@ -19,10 +20,10 @@ const config = {
         lib: path.resolve(__dirname, 'src'),
     },
     'outputAlias': {
-        'nej-commonjs': path.resolve(__dirname, 'src'),
+        [dist]: path.resolve(__dirname, 'src'),
     },
     'mode': 1,
-    'isPatch': true
+    'isPatch': process.env.PLATFORM
 };
 const platformJS = path.join(__dirname, dist, 'base', 'platform.js');
 
@@ -53,4 +54,23 @@ gulp.task('AddNEJPATCH',
         .pipe(gulp.dest(path.parse(platformJS).dir))
 });
 
-gulp.task('default', ['AddNEJPATCH']);
+
+gulp.task('COPYINDEXOTHERS', ['AddNEJPATCH'], function () {
+    return gulp
+        .src([
+            './package.json',
+            './README.MD'
+        ])
+        .pipe(gulp.dest(dist))
+});
+
+gulp.task('COPYINDEX', ['COPYINDEXOTHERS'], function () {
+    return gulp
+        .src([
+            './NEJ.INDEX.js'
+        ])
+        .pipe(rename('index.js'))
+        .pipe(gulp.dest(dist))
+})
+
+gulp.task('default', ['COPYINDEX']);
