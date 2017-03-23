@@ -16,11 +16,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp",
     "release": "npm run build && cd nej-commonjs && npm publish",
-    "buildPlatform": "PLATFORM=true && gulp",
+    "buildPlatform": "cross-env PLATFORM=true  gulp",
     "releasePlatform": "npm run buildPlatform && cd nej-commonjs-platform && npm publish"
   },
   "devDependencies": {
     "art-template": "^3.1.3",
+    "cross-env": "^3.2.4",
     "gulp": "^3.9.1",
     "gulp-beautify": "^2.0.1",
     "gulp-clean": "^0.3.2",
