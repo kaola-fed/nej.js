@@ -1,12 +1,15 @@
-const gulp = require('gulp');
-const clean = require('gulp-clean');
-const insert = require('gulp-insert');
-const rename = require('gulp-rename');
-const nejc = require('nejc');
-const path = require('path');
-const fs = require('fs');
-const dist = process.env.PLATFORM ? 'nej-commonjs-platform' : 'nej-commonjs';
-const config = {
+const gulp          = require('gulp');
+const babel         = require('gulp-babel');
+const clean         = require('gulp-clean');
+const insert        = require('gulp-insert');
+const rename        = require('gulp-rename');
+const nejc          = require('nejc');
+const path          = require('path');
+const fs            = require('fs');
+const dist          = process.env.IE ? 'nej.js-ie' : 'nej.js';
+const platformJS    = path.join(__dirname, dist, 'base', 'platform.js');
+
+const config    = {
     'src': 'src/**',
     'dist': dist,
     'ignoreFiles': [
@@ -25,7 +28,6 @@ const config = {
     'mode': 1,
     'isPatch': process.env.PLATFORM
 };
-const platformJS = path.join(__dirname, dist, 'base', 'platform.js');
 
 gulp.task('clean', function () {
     return gulp
@@ -45,7 +47,7 @@ gulp.task('build', ['clean'], function () {
         .pipe(gulp.dest(config.dist));
 });
 
-gulp.task('AddNEJPATCH', ['build'],
+gulp.task('add-nej-patch', ['build'],
     function () {
         var tpl = fs.readFileSync(path.join('template', 'NEJ.PATCH.js')).toString('utf-8');
         return gulp
@@ -55,16 +57,16 @@ gulp.task('AddNEJPATCH', ['build'],
     });
 
 
-gulp.task('COPYINDEXOTHERS', ['AddNEJPATCH'], function () {
+gulp.task('copy-home-files', ['add-nej-patch'], function () {
     return gulp
         .src([
             './package.json',
-            './README.MD'
+            './readme.MD'
         ])
         .pipe(gulp.dest(dist))
 });
 
-gulp.task('COPYINDEX', ['COPYINDEXOTHERS'], function () {
+gulp.task('copy-entries', ['copy-home-files'], function () {
     return gulp
         .src([
             path.join('template', 'NEJ.INDEX.js')
@@ -73,4 +75,4 @@ gulp.task('COPYINDEX', ['COPYINDEXOTHERS'], function () {
         .pipe(gulp.dest(dist))
 })
 
-gulp.task('default', ['COPYINDEX']);
+gulp.task('default', ['copy-entries']);

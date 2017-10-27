@@ -1,23 +1,23 @@
 {
-  "name": "nej-commonjs",
+  "name": "nej.js",
   "version": "0.5.0",
-  "description": "NEJ 是网易开源的一体化前端框架，而 NEJ-CommonJS 是 NEJ 的 CommonJS 版本",
+  "description": "NEJ 是网易开源的一体化前端框架，而 nej.js 是 NEJ 的 CommonJS 版本",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kaola-fed/NEJ-CommonJS.git"
+    "url": "git+https://github.com/kaola-fed/nej.js.git"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/kaola-fed/NEJ-CommonJS/issues"
+    "url": "https://github.com/kaola-fed/nej.js/issues"
   },
-  "homepage": "https://github.com/kaola-fed/NEJ-CommonJS#readme",
+  "homepage": "https://github.com/kaola-fed/nej.js#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo fine",
     "build": "gulp",
-    "release": "npm run build && cd nej-commonjs && npm publish",
-    "buildPlatform": "cross-env PLATFORM=true  gulp",
-    "releasePlatform": "npm run buildPlatform && cd nej-commonjs-platform && npm publish"
+    "release": "npm run build && cd nej.js && npm publish",
+    "build-ie-version": "cross-env IE=true gulp",
+    "release-ie-version": "npm run build-ie-version && cd nej.js-ie && npm publish"
   },
   "devDependencies": {
     "art-template": "^3.1.3",

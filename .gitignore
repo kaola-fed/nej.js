@@ -1,7 +1,7 @@
 .DS_Store
 /dist/
-/nej-commonjs/
-/nej-commonjs-platform/
+/nej.js/
+/nej.js-ie/
 .idea/
 
 # Node template
