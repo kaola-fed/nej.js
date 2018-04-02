@@ -7,6 +7,7 @@ const nejc          = require('nejc');
 const path          = require('path');
 const fs            = require('fs');
 const dist          = process.env.IE ? 'nej.js-ie' : 'nej.js';
+const srcPackageJSON = process.env.IE ? './template/nej-ie.package.json' : './template/nej.package.json';
 const platformJS    = path.join(__dirname, dist, 'base', 'platform.js');
 
 const config    = {
@@ -26,7 +27,7 @@ const config    = {
         [dist]: path.resolve(__dirname, 'src'),
     },
     'mode': 1,
-    'isPatch': process.env.PLATFORM
+    'isPatch': process.env.IE
 };
 
 gulp.task('clean', function () {
@@ -58,9 +59,14 @@ gulp.task('add-nej-patch', ['build'],
 
 
 gulp.task('copy-home-files', ['add-nej-patch'], function () {
-    return gulp
+    gulp
         .src([
-            './package.json',
+            srcPackageJSON
+        ])
+        .pipe(rename('package.json'))
+        .pipe(gulp.dest(dist));
+
+    gulp.src([
             './readme.MD'
         ])
         .pipe(gulp.dest(dist))
