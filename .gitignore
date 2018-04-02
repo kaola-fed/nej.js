@@ -1,6 +1,7 @@
 .DS_Store
 /dist/
 /nej.js/
+/nej-ie.js/
 /nej.js-ie/
 .idea/
 
