@@ -17,7 +17,7 @@
     "build": "gulp",
     "release": "npm run build && cd nej.js && npm publish",
     "build-ie-version": "cross-env IE=true gulp",
-    "release-ie-version": "npm run build-ie-version && cd nej.js-ie && npm version patch && npm publish"
+    "release-ie-version": "npm run build-ie-version && cd nej-ie.js && npm version patch && npm publish"
   },
   "devDependencies": {
     "art-template": "^3.1.3",
