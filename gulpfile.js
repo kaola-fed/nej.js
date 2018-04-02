@@ -6,7 +6,7 @@ const rename        = require('gulp-rename');
 const nejc          = require('nejc');
 const path          = require('path');
 const fs            = require('fs');
-const dist          = process.env.IE ? 'nej.js-ie' : 'nej.js';
+const dist          = process.env.IE ? 'nej-ie.js' : 'nej.js';
 const srcPackageJSON = process.env.IE ? './template/nej-ie.package.json' : './template/nej.package.json';
 const platformJS    = path.join(__dirname, dist, 'base', 'platform.js');
 
