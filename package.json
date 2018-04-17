@@ -15,9 +15,11 @@
   "scripts": {
     "test": "echo fine",
     "build": "gulp",
-    "release": "npm run build && cd nej.js && npm publish",
     "build-ie-version": "cross-env IE=true gulp",
-    "release-ie-version": "npm run build-ie-version && cd nej-ie.js && npm publish"
+    "release": "npm run build && cd nej.js && npm publish",
+    "release-alpha": "npm run release -- --tag alpha",
+    "release-ie-version": "npm run build-ie-version && cd nej-ie.js && npm publish",
+    "release-ie-version-alpha": "npm run release-ie-version -- --tag alpha"
   },
   "devDependencies": {
     "art-template": "^3.1.3",

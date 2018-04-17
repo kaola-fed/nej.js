@@ -1,36 +1,16 @@
 {
-    "name": "nej-ie.js",
-    "version": "0.5.0",
-    "description": "NEJ 是网易开源的一体化前端框架，而 nej.js 是 NEJ 的 CommonJS 版本",
-    "main": "index.js",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/kaola-fed/nej.js.git"
-    },
-    "author": "",
-    "bugs": {
-      "url": "https://github.com/kaola-fed/nej.js/issues"
-    },
-    "homepage": "https://github.com/kaola-fed/nej.js#readme",
-    "scripts": {
-      "test": "echo fine",
-      "build": "gulp",
-      "release": "npm run build && cd nej.js && npm publish",
-      "build-ie-version": "cross-env IE=true gulp",
-      "release-ie-version": "npm run build-ie-version && cd nej.js-ie && npm publish"
-    },
-    "devDependencies": {
-      "art-template": "^3.1.3",
-      "cross-env": "^3.2.4",
-      "gulp": "^3.9.1",
-      "gulp-beautify": "^2.0.1",
-      "gulp-clean": "^0.3.2",
-      "gulp-html-tpl": "^0.4.1",
-      "gulp-insert": "^0.5.0",
-      "gulp-rename": "^1.2.2",
-      "gulp-babel": "^7.0.1",    
-      "nejc": "^1.2.0"
-    },
-    "license": "MIT"
-  }
-  
+  "name": "ne.js",
+  "version": "0.5.3",
+  "description": "commonjs 版 nej",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaola-fed/nej.js.git"
+  },
+  "author": "netease",
+  "bugs": {
+    "url": "https://github.com/kaola-fed/nej.js/issues"
+  },
+  "homepage": "https://github.com/kaola-fed/nej.js#readme",
+  "license": "MIT"
+}
