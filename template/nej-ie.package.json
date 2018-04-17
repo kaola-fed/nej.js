@@ -1,6 +1,6 @@
 {
     "name": "nej-ie.js",
-    "version": "0.5.0",
+    "version": "0.5.2",
     "description": "NEJ 是网易开源的一体化前端框架，而 nej.js 是 NEJ 的 CommonJS 版本",
     "main": "index.js",
     "repository": {
