@@ -39,14 +39,17 @@ NEJ.define([
             _init = !1;
         // receive message
         var _doReceiveMessage = function(_event){
-            var _data = _event.data;
-            if (_data.indexOf(_flag)!=0) return;
-            _data = JSON.parse(_data.replace(_flag,''));
-            var _proxy = _cache[_data.key];
-            if (!_proxy) return;
-            delete _cache[_data.key];
-            _data.result = decodeURIComponent(_data.result||'');
-            _proxy.__onLoadRequest(_data);
+            try{
+                var _data = _event.data;
+                if(typeof _data !== 'string') return;
+                if (_data.indexOf(_flag)!=0) return;
+                _data = JSON.parse(_data.replace(_flag,''));
+                var _proxy = _cache[_data.key];
+                if (!_proxy) return;
+                delete _cache[_data.key];
+                _data.result = decodeURIComponent(_data.result||'');
+                _proxy.__onLoadRequest(_data);
+            }catch(e) {}
         };
         // init message listener
         var _doInitMessage = function(){
