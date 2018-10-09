@@ -1,6 +1,6 @@
 {
     "name": "nej-ie.js",
-    "version": "0.5.3",
+    "version": "0.5.4",
     "description": "带有 patch 的 commonjs 版 nej",
     "main": "index.js",
     "repository": {
